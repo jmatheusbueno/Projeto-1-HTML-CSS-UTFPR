@@ -4,19 +4,22 @@
     background-color: black;
 }
 
-@media (min-width: 601px)
-{
-    .header {   
-        background-color: black;
-        height: 80px;
-        width: 1140px;
-        margin: 0 auto;
-        
-        align-items: center;
-        justify-content: space-between;
-        display: flex;
-    }
+body {
+    min-width: 300px;
+}
 
+.header {   
+    background-color: black;
+    height: 8vh;
+    margin: 0 auto;
+    min-width: 300px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+@media (min-width: 1001px)
+{
     .header-logo {
         margin-left: 31px;
     }
@@ -29,6 +32,7 @@
         color: #fff;
         align-items: center;
     }
+    
     .header-logo-right {
         display: none;
     }
@@ -108,18 +112,8 @@
     }
 }
 
-@media (max-width: 600px)
+@media (max-width: 1000px)
 {
-    .header {   
-        background-color: black;
-        height: 8vh;
-        margin: 0 auto;
-        
-        align-items: center;
-        justify-content: space-between;
-        display: flex;
-    }
-
     .header-logo {
         margin-left: 5%;
         height: 28px;
@@ -136,8 +130,8 @@
 
     .content {
         background-image: url("https://www-growth.scdn.co/static/home/bursts-tablet.svg");
-        background-size: 100vh;
-        background-position: 40%;
+        background-size: 153%;
+        background-position: right 40% center;
         background-color: #2941ab;
         width: auto;
         height: 100vh;
@@ -156,7 +150,7 @@
     }
 
     .content h4 {
-        margin-top: 10%;
+        margin-top: 20px;
         font-family: 'spotify-circular', Helvetica, Arial, sans-serif;
         background-color: transparent;
         color: #1ed760;
@@ -175,3 +169,12 @@
     }
 }
 
+@media (max-width: 550px)
+{
+    .content {
+        background-image: url("https://www-growth.scdn.co/static/home/bursts-tablet.svg");
+        background-size: 215%;
+        background-repeat: no-repeat;
+        background-position: center top 40%;
+    }
+}
