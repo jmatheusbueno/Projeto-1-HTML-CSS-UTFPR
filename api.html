@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto 2 - AJAX</title>
-    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="assets/style/api.css">
     <link rel="stylesheet" href="assets/style/common.css">
+    <script src="assets/scripts/api.js"></script>
 </head>
 <body>
     <div class="header">
@@ -20,6 +21,11 @@
                 <li><a href="#">API</a></li>
             </ul>
         </nav>
+    </div>
+
+    <div class="container">
+        <input type="text" placeholder="Pesquise suas músicas..." name="search" maxlength="42">
+        <input type="button" value="Pesquisar" onclick="search()">
     </div>
     
 </body>
