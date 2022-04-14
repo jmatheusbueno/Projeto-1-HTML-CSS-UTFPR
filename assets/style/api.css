@@ -109,15 +109,10 @@ audio {
     height: 34px;
     width: 60%;
     margin-bottom: 4px;
-    
 }
 
 audio::-webkit-media-controls-panel {
     background-color: #303030;
-}
-
-audio::-webkit-media-controls-mute-button {
-    color: aqua;
 }
 
 audio::-webkit-media-controls-current-time-display,
