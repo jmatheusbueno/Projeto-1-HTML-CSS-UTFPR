@@ -7,8 +7,6 @@
     <title>Projeto 2 - AJAX</title>
     <link rel="stylesheet" href="assets/style/api.css">
     <link rel="stylesheet" href="assets/style/common.css">
-    <script src="assets/scripts/api.js"></script>
-    <script src="https://e-cdns-files.dzcdn.net/js/min/dz.js"></script>
 </head>
 <body>
     <div class="header">
@@ -19,8 +17,7 @@
             <ul>
                 <li><a href="index.html">Início</a></li>
                 <span class="menu-separator">|</span>
-                <!-- <li><a href="https://connect.deezer.com/oauth/auth.php?app_id=537302&redirect_uri=http://127.0.0.1:5500/api.html_URI&perms=basic_access,email">Conectar</a></li> -->
-                <li><a href="https://connect.deezer.com/oauth/auth.php?app_id=537302&redirect_uri=https://jmatheusbueno.github.io/Projeto-1-HTML-CSS-UTFPR/api.html&perms=basic_access,email">Conectar</a></li>
+                <li><a href="https://connect.deezer.com/oauth/auth.php?app_id=537302&redirect_uri=https://jmatheusbueno.github.io/Projeto-1-HTML-CSS-UTFPR/api.html&perms=basic_access,email" id="connect">Conectar</a></li>
             </ul>
         </nav>
     </div>
@@ -33,9 +30,39 @@
     <div class="box-list-container">
         <div class="list-container">
             <ul>
-                <li class="list-card"></li>
+                <li class="list-card">
+                    <ul id="list-card-data">
+                        <li><span class="card-counter">1</span></li>
+                        <li>
+                            <img src="https://e-cdns-images.dzcdn.net/images/cover/77d3f033b5b032233eff774c9f29c4c8/56x56-000000-80-0-0.jpg" class="card-avatar">
+                        </li>
+                        <li><span class="card-tittle">Butter</span></li>
+                        <li>
+                            <audio controls>
+                                <source src="https://cdns-preview-a.dzcdn.net/stream/c-a5071b94f502031e67a5e9ac60be050a-4.mp3" type="audio/mp3">                        
+                            </audio>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list-card">
+                    <ul id="list-card-data">
+                        <li><span class="card-counter">1</span></li>
+                        <li>
+                            <img src="https://e-cdns-images.dzcdn.net/images/cover/77d3f033b5b032233eff774c9f29c4c8/56x56-000000-80-0-0.jpg" class="card-avatar">
+                        </li>
+                        <li><span class="card-tittle">Butter</span></li>
+                        <li>
+                            <audio controls>
+                                <source src="https://cdns-preview-a.dzcdn.net/stream/c-a5071b94f502031e67a5e9ac60be050a-4.mp3" type="audio/mp3">                        
+                            </audio>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>   
+
+    <script src="assets/scripts/api.js"></script>
+    <script src="https://e-cdns-files.dzcdn.net/js/min/dz.js"></script>
 </body>
 </html>

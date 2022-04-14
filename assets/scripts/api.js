@@ -1,3 +1,15 @@
+
+document.addEventListener("DOMContentLoaded", function() {
+    load();
+});
+
+function load() {
+    let connected = window.location.href.split('?')[1];
+    if (connected === 'connected') {
+        document.getElementById('connect').textContent = 'Usuário Conectado';
+    }
+}
+
 function search() {
     let result;
     let search = document.querySelector('[name="search"]').value;
@@ -6,26 +18,23 @@ function search() {
     http.onreadystatechange = function() {
         if (http.readyState === 4 && http.status === 200) {
             result = JSON.parse(http.responseText);
-            console.log(result);
+            loadDataSource(result);
         }
     }
     http.send();
 }
 
-function login() {
-    console.log(window.location.hostname);
-    let result;
-    var http = new XMLHttpRequest();
-    http.open(
-        "get", 
-        `https://connect.deezer.com/oauth/auth.php?app_id=1&redirect_uri=https://developers.deezer.com/api/oauth&perms=basic_access,email`, 
-        true
-    );
-    http.onreadystatechange = function() {
-        if (http.readyState === 4 && http.status === 200) {
-            result = JSON.parse(http.responseText);
-        }
+function loadDataSource(dataJSON) {
+    console.log(typeof dataJSON.data)
+    console.log(dataJSON.data)
+    let data = [];
+
+    for (let obj in dataJSON.data) {
+        console.log(obj);
+        data.push({
+            title: obj.title,
+        });
     }
-    http.send();
-    console.log(result);
+
+    console.log(data);
 }
