@@ -47,7 +47,6 @@ ul {
 }
 
 .container input[type=button]:hover {
-    /* background-color: #2941AB; */
     cursor: pointer;
     color: white;
 }
@@ -118,4 +117,30 @@ audio::-webkit-media-controls-panel {
 audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-time-remaining-display {
     color: #fff;
+}
+
+@media (max-width: 830px)
+{
+    body {
+        background-color: #2a2a2a;
+        background-image: none;
+    }
+
+    .container input[type=text] {
+        width: 422px;
+        height: 40px;
+    }
+    
+    .container input[type=text]:focus {
+        border: 2px solid #1ED760;
+        width: 500px;
+    }
+
+    .card-avatar, .card-tittle {
+        margin-right: 5px;
+    }
+
+    audio {
+        width: 65%;
+    }
 }
