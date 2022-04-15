@@ -17,52 +17,39 @@
             <ul>
                 <li><a href="index.html">Início</a></li>
                 <span class="menu-separator">|</span>
-                <li><a href="https://connect.deezer.com/oauth/auth.php?app_id=537302&redirect_uri=https://jmatheusbueno.github.io/Projeto-1-HTML-CSS-UTFPR/api.html&perms=basic_access,email" id="connect">Conectar</a></li>
+                <li><a href="https://connect.deezer.com/oauth/auth.php?app_id=537542&redirect_uri=https://jmatheusbueno.github.io/Projeto-1-HTML-CSS-UTFPR/api.html&perms=basic_access,email" id="connect">Conectar</a></li>
             </ul>
         </nav>
     </div>
     
     <div class="container">
         <input type="text" placeholder="Pesquise suas músicas..." name="search" maxlength="42">
-        <input type="button" value="Pesquisar" onclick="search()">
+        <input type="button" value="Pesquisar" onclick="search2()">
     </div>
-    
-    <div class="box-list-container">
-        <div class="list-container">
-            <ul>
-                <li class="list-card">
-                    <ul id="list-card-data">
-                        <li><span class="card-counter">1</span></li>
-                        <li>
-                            <img src="https://e-cdns-images.dzcdn.net/images/cover/77d3f033b5b032233eff774c9f29c4c8/56x56-000000-80-0-0.jpg" class="card-avatar">
-                        </li>
-                        <li><span class="card-tittle">Butter</span></li>
-                        <li>
-                            <audio controls>
-                                <source src="https://cdns-preview-a.dzcdn.net/stream/c-a5071b94f502031e67a5e9ac60be050a-4.mp3" type="audio/mp3">                        
-                            </audio>
-                        </li>
-                    </ul>
-                </li>
-                <li class="list-card">
-                    <ul id="list-card-data">
-                        <li><span class="card-counter">1</span></li>
-                        <li>
-                            <img src="https://e-cdns-images.dzcdn.net/images/cover/77d3f033b5b032233eff774c9f29c4c8/56x56-000000-80-0-0.jpg" class="card-avatar">
-                        </li>
-                        <li><span class="card-tittle">Butter</span></li>
-                        <li>
-                            <audio controls>
-                                <source src="https://cdns-preview-a.dzcdn.net/stream/c-a5071b94f502031e67a5e9ac60be050a-4.mp3" type="audio/mp3">                        
-                            </audio>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+
+    <div class="box-content-container">
+        <div class="content-container">
+            <table class="table-container">
+                <!-- <tr>
+                    <td class="card-counter">1</td>
+                    <td>
+                        <img src="https://e-cdns-images.dzcdn.net/images/cover/77d3f033b5b032233eff774c9f29c4c8/56x56-000000-80-0-0.jpg" class="card-avatar">
+                    </td>
+                    <td class="card-tittle">
+                        Butter
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="https://cdns-preview-a.dzcdn.net/stream/c-a5071b94f502031e67a5e9ac60be050a-4.mp3" type="audio/mp3">                        
+                        </audio>
+                    </td>
+                </tr> -->
+            </table>
         </div>
     </div>   
 
     <script src="assets/scripts/api.js"></script>
     <script src="https://e-cdns-files.dzcdn.net/js/min/dz.js"></script>
+    <script src="assets/example.js"></script>
 </body>
 </html>

@@ -51,41 +51,32 @@ ul {
     color: white;
 }
 
-.box-list-container {
+.box-content-container {
     margin-top: 100px;
-    /* border: 1px solid red; */
 }
 
-.list-container {
-    height: 600px;
+.content-container {
     width: 60%;
     margin: 0 auto;
     box-shadow: 0 0 10px 2px #616161;
-    /* border: 1px solid blue; */
 }
 
-.list-card {
-    height: 50px;
-    transition: 0.3s;
-
-    /* border: 1px solid yellow; */
-}
-
-.list-card:hover {
-    background-color: rgb(59, 59, 59);
-    cursor: pointer;
-}
-
-ul#list-card-data li {
-    display: inline;
+table {
     font-family: Helvetica;
     color: #fff;
 }
 
+tr {
+    transition: 0.3s;
+}
+
+tr:hover {
+    cursor: pointer;
+    background-color: rgb(59, 59, 59);
+}
+
 .card-counter {
-    position: relative;
-    top: -16px;
-    margin-left: 2px;
+    width: 30px;
 }
 
 .card-avatar {
@@ -97,17 +88,18 @@ ul#list-card-data li {
 }
 
 .card-tittle {
-    position: relative;
-    top: -16px;
+    width: 500px;
     font-size: 18px;
     letter-spacing: 1.5px;
-    margin-right: 40px;
+}
+
+.card-audio {
+    width: 500px;
 }
 
 audio {
-    height: 34px;
-    width: 60%;
-    margin-bottom: 4px;
+    width: 500px;
+    height: 30px;
 }
 
 audio::-webkit-media-controls-panel {
@@ -134,13 +126,5 @@ audio::-webkit-media-controls-time-remaining-display {
     .container input[type=text]:focus {
         border: 2px solid #1ED760;
         width: 500px;
-    }
-
-    .card-avatar, .card-tittle {
-        margin-right: 5px;
-    }
-
-    audio {
-        width: 65%;
     }
 }

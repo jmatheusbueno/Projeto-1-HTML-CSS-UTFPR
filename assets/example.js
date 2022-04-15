@@ -1,4 +1,4 @@
-{
+const example = {
   "data": [
     {
       "id": "3819908",
