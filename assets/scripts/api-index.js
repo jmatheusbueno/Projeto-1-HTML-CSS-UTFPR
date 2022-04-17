@@ -38,6 +38,9 @@ function loadDataSource(data) {
             preview: data[obj].preview,
             avatar: data[obj].album.cover_small,
         });
+
+        if (count === 13) break;
+
         count++;
     }
 
