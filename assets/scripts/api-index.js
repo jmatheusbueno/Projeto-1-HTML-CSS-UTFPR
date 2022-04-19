@@ -11,7 +11,7 @@ function load() {
 
 function search() {
     let result;
-    let search = document.querySelector('[name="search"]').value;
+    let search = document.querySelector('.search]').value;
     var http = new XMLHttpRequest();
     http.open("get", `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${search}`, true);
     http.onreadystatechange = function() {
@@ -28,8 +28,10 @@ function search2() {
 }
 
 function loadDataSource(data) {
+    this.document.querySelector('.box-content-container').style.display = 'block';
+    this.document.querySelector('.search').style.marginTop = '100px';
+    
     let filteredData = [];
-
     let count = 1;
     for (let obj in data) {
         filteredData.push({
