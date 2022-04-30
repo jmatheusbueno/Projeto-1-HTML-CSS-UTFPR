@@ -3,19 +3,26 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function load() {
-    let connected = window.location.href.split('=')[1];
-    if (connected) {
-        // document.location.href = `https://connect.deezer.com/oauth/access_token.php?app_id=538202&secret=d2fedf586f15a4ebdd0e20c79ecb5115&code=${connected}`
+    // let code = window.location.href.split('=')[1];
+    // if (code) {
+    //     // document.location.href = `https://connect.deezer.com/oauth/access_token.php?app_id=538202&secret=d2fedf586f15a4ebdd0e20c79ecb5115&code=${connected}`
 
-        var http = new XMLHttpRequest();
-        http.open("get", `https://cors-anywhere.herokuapp.com/https://connect.deezer.com/oauth/access_token.php?app_id=538202&secret=d2fedf586f15a4ebdd0e20c79ecb5115&code=${connected}`, true);
-        http.onreadystatechange = function() {
-            if (http.readyState === 4 && http.status === 200) {
-                result = JSON.parse(http.responseText);
-                console.log(result.data);
-            }
-        }
-        http.send();
+    //     var http = new XMLHttpRequest();
+    //     http.open("get", `https://cors-anywhere.herokuapp.com/https://connect.deezer.com/oauth/access_token.php?app_id=538202&secret=d2fedf586f15a4ebdd0e20c79ecb5115&code=${code}`, true);
+    //     http.onreadystatechange = function() {
+    //         if (http.readyState === 4 && http.status === 200) {
+    //             result = JSON.parse(http.responseText);
+    //             console.log(result.data);
+    //         }
+    //     }
+    //     http.send();
+    // }
+    
+    let code = window.location.href.split('=')[1];
+    if (code) {
+        fetch(`https://cors-anywhere.herokuapp.com/https://connect.deezer.com/oauth/access_token.php?app_id=538202&secret=d2fedf586f15a4ebdd0e20c79ecb5115&code=${code}`)
+            .then(response => response.json().then(data => console.log(data)))
+            .catch(e => console.log(e.message));
     }
 }
 
