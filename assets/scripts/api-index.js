@@ -1,3 +1,5 @@
+let validToken = false;
+
 document.addEventListener("DOMContentLoaded", function() {
     load();
 });
@@ -20,9 +22,19 @@ function load() {
     
     let code = window.location.href.split('=')[1];
     if (code) {
-        fetch(`https://cors-anywhere.herokuapp.com/https://connect.deezer.com/oauth/access_token.php?app_id=538202&secret=d2fedf586f15a4ebdd0e20c79ecb5115&code=${code}`)
-            .then(response => response.json().then(data => console.log(data)))
-            .catch(e => console.log(e.message));
+        const options = {
+            method: 'GET',
+            mode: 'cors'
+        }
+        fetch(`https://cors-anywhere.herokuapp.com/https://connect.deezer.com/oauth/access_token.php?app_id=538202&secret=d2fedf586f15a4ebdd0e20c79ecb5115&code=${code}`, options)
+            .then(response => {
+                response.json().then(data => console.log('ok', data));
+                validToken = true;
+            })
+            .catch(e => {
+                console.log('dont ok', e.message);
+                validToken = false;
+            });
     }
 }
 
