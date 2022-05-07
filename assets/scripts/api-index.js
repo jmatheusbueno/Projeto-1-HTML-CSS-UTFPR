@@ -1,4 +1,5 @@
 let validToken = false;
+let historic = [''];
 
 document.addEventListener("DOMContentLoaded", function() {
     load();
@@ -36,6 +37,10 @@ function load() {
                 validToken = false;
             });
     }
+
+    if (!localStorage.getItem('historic')) {
+        localStorage.setItem('historic', historic);
+    }
 }
 
 function search() {
@@ -50,10 +55,32 @@ function search() {
         }
     }
     http.send();
+
+    this.updateHistoric();
 }
 
 function search2() {
     loadDataSource(example.data);
+    this.updateHistoric();
+}
+
+function updateHistoric() {
+    let search = document.querySelector('.search').value;
+    historic.push(search);
+    localStorage.setItem('historic', historic);
+}
+
+function createHistoricElements() {
+    let ulContainer = this.document.querySelector('.ul-historic-list');
+
+    historic = historic.filter(item => item !== '');
+    let liContainer = elementFactory('li');
+    let input = elementFactory('input');
+    input.type = 'button';
+    input.value = historic[historic.length - 1];
+
+    liContainer.appendChild(input);
+    ulContainer.appendChild(liContainer);
 }
 
 function loadDataSource(data) {
@@ -109,8 +136,8 @@ function loadDataSource(data) {
 
         tableContainer.appendChild(trCard);
     }
+}
 
-    function elementFactory(element) {
-        return document.createElement(element)
-    }
+function elementFactory(element) {
+    return document.createElement(element)
 }
