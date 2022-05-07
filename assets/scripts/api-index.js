@@ -66,6 +66,7 @@ function search(historic) {
 }
 
 function search2() {
+    clearDataSource();
     loadDataSource(example.data);
     this.updateHistoric();
 }
@@ -143,6 +144,11 @@ function loadDataSource(data) {
 
         tableContainer.appendChild(trCard);
     }
+}
+
+function clearDataSource() {
+    let tableContainer = document.querySelector('.table-container');
+    tableContainer.innerHTML = '';
 }
 
 function elementFactory(element) {
