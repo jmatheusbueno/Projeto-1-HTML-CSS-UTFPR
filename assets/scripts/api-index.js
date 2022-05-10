@@ -56,13 +56,12 @@ function search(historic) {
         if (http.readyState === 4 && http.status === 200) {
             result = JSON.parse(http.responseText);
             loadDataSource(result.data);
+            this.updateHistoric();
         } else {
             setInvalid();
         }
     }
     http.send();
-
-    this.updateHistoric();
 }
 
 function setInvalid() {
@@ -88,9 +87,12 @@ function updateHistoric() {
 }
 
 function createHistoricElements() {
-    let ulContainer = this.document.querySelector('.ul-historic-list');
+    historic = historic.filter(item => item !== '' || item !== undefined);
+    if (historic[historic.length - 1] === '') {
+        return;
+    }
 
-    historic = historic.filter(item => item !== '');
+    let ulContainer = this.document.querySelector('.ul-historic-list');
     let liContainer = elementFactory('li');
     let input = elementFactory('input');
     input.type = 'button';
@@ -104,7 +106,10 @@ function createHistoricElements() {
 function loadDataSource(data) {
     this.document.querySelector('.box-content-container').style.display = 'block';
     this.document.querySelector('.search').style.marginTop = '100px';
+    createMusicListComponent(getFilteredData(data));
+}
 
+function getFilteredData(data) {
     let filteredData = [];
     let count = 1;
     for (let obj in data) {
@@ -116,10 +121,13 @@ function loadDataSource(data) {
         });
 
         if (count === 13) break;
-
         count++;
     }
 
+    return filteredData;
+}
+
+function createMusicListComponent(filteredData) {
     for (let obj in filteredData) {
         let tableContainer = document.querySelector('.table-container');
 
