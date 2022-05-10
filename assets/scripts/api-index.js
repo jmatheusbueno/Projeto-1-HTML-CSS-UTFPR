@@ -48,21 +48,31 @@ function search(historic) {
     let search = document.querySelector('.search').value;
     var http = new XMLHttpRequest();
     if (historic) {
-        console.log('ok');
         http.open("get", `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${historic}`, true);
     } else {
-        console.log('n ok');
         http.open("get", `https://cors-anywhere.herokuapp.com/https://api.deezer.com/search?q=${search}`, true);
     }
     http.onreadystatechange = function() {
         if (http.readyState === 4 && http.status === 200) {
             result = JSON.parse(http.responseText);
             loadDataSource(result.data);
+        } else {
+            setInvalid();
         }
     }
     http.send();
 
     this.updateHistoric();
+}
+
+function setInvalid() {
+    let inputText = document.querySelector('.search');
+    inputText.classList.add('invalid');
+}
+
+function setValid() {
+    let inputText = document.querySelector('.search');
+    inputText.classList.remove('invalid');
 }
 
 function search2() {

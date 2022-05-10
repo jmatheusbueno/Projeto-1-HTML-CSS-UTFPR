@@ -42,6 +42,11 @@ ul {
     color: #1ED760;
 }
 
+.invalid {
+    border: 2px solid red;
+    box-shadow: 0 0 1em red;
+}
+
 .container input[type=button] {
     position: relative;
     top: 1px;
