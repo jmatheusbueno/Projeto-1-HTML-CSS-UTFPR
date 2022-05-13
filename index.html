@@ -37,11 +37,15 @@
         <h1>tudo</h1>
         <h4>Milhões de músicas e podcasts para explorar. E nem precisa de cartão de crédito.</h4>
 
-        <input class="btn" type="button" value="BAIXE O SPOTIFY FREE">   
+        <input class="btn" type="button" value="BAIXE O SPOTIFY FREE"> 
+
+        <a href="#scroll-api">
+            <input type="button" value="Teste já" class="scroll-index"/>
+        </a>
     </div>
 
     <div class="transition"></div>
-    <div class="api">
+    <div class="api" id="scroll-api">
         <div class="container">
             <input type="text" class="search" placeholder="Pesquise suas músicas..." maxlength="42">
             <input type="button" value="Pesquisar" onclick="setValid(), search(), createHistoricElements()">
