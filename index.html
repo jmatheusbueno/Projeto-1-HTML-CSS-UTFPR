@@ -36,8 +36,10 @@
 
     <div id="mongo-login" class="login-modal">
         <span class="login-close" onclick="closeModal()">X</span>
-        <input type="text" class="login-input" name="" id="" placeholder="Username">
-        <input type="password" class="login-input" name="" id="" placeholder="Password">
+        <input type="text" class="login-input" name="" id="idUsername" placeholder="Username">
+        <span class="errorUsername error"></span>
+        <input type="password" class="login-input" name="" id="idPassword" placeholder="Password">
+        <span class="errorPassword error"></span>
         <input type="button" value="Login" class="login-button" onclick="mongoLogin()">
     </div>
 

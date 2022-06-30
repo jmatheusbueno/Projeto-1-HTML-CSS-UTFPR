@@ -65,12 +65,11 @@
     margin-top: 45px;
 }
 
-.login-username {
-
-}
-
-.login-password {
-
+.error {
+    float: left;
+    margin-left: 40%;
+    color: #fff;
+    font-size: 1.2em;
 }
 
 .background-onblur {

@@ -3,7 +3,6 @@ const Music = require('../models/Music');
 
 // Salvar musica
 router.post('/', async (req, res) => {
-
     if (!req.body) {
         res.status(422).json({ error: 'Os dados não foram enviados' });
     }
